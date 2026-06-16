@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
-            --primary: #1e3a8a; 
-            --secondary: #b45309; 
+            --primary: #1e3a8a; /* Azul Institucional */
+            --secondary: #b45309; /* Dourado Acadêmico */
             --bg-light: #f8fafc;
             --text-dark: #1e293b;
             --text-muted: #64748b;
             --white: #ffffff;
-            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -23,16 +23,13 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
+        /* Top Bar & Header */
         .top-bar {
             background-color: var(--primary);
             color: white;
@@ -73,7 +70,6 @@
             display: flex;
             gap: 25px;
             list-style: none;
-            align-items: center;
         }
 
         .nav-links a {
@@ -81,7 +77,6 @@
             color: var(--text-dark);
             font-weight: 600;
             transition: color 0.3s;
-            font-size: 15px;
         }
 
         .nav-links a:hover {
@@ -95,8 +90,9 @@
             border-radius: 5px;
         }
 
+        /* Banner Hero */
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.9)), 
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
@@ -105,42 +101,25 @@
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .hero p {
-            font-size: 19px;
-            max-width: 750px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
+        /* Seção Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-header h2 {
-            font-size: 36px;
+            font-size: 32px;
             color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 17px;
-        }
-
+        /* Grid de Cursos */
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -151,61 +130,68 @@
             background: var(--white);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
             border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: column;
+            position: relative;
         }
 
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
         .course-image {
-            height: 230px;
+            height: 220px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            border-bottom: 4px solid var(--secondary);
+            position: relative;
+        }
+
+        /* Placeholder para carregamento de imagem */
+        .course-image::before {
+            content: "\f1c5"; /* Ícone de arquivo de imagem */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .course-image:empty::before {
+            display: block;
         }
 
         .course-content {
             padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .category-tag {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--secondary);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: block;
-            letter-spacing: 1px;
         }
 
         .course-content h3 {
-            font-size: 21px;
+            font-size: 22px;
             margin-bottom: 15px;
             color: var(--primary);
-            font-weight: 700;
-            line-height: 1.3;
         }
 
         .course-info {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-size: 14px;
             color: var(--text-muted);
-            border-top: 1px solid #f1f5f9;
-            padding-top: 15px;
         }
 
         .course-info span {
@@ -220,70 +206,35 @@
             background-color: var(--primary);
             color: white;
             text-decoration: none;
-            padding: 13px;
+            padding: 12px;
             border-radius: 6px;
             font-weight: 600;
             transition: background 0.3s;
-            font-size: 15px;
         }
 
         .btn-details:hover {
             background-color: #172554;
         }
 
+        /* Footer */
         footer {
             background-color: var(--primary);
             color: white;
-            padding: 70px 20px 30px;
-            margin-top: 80px;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section h4 {
-            font-size: 18px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--secondary);
-            display: inline-block;
-            padding-bottom: 7px;
-            font-weight: 700;
-        }
-
-        .footer-section p, .footer-section li {
-            font-size: 14px;
-            margin-bottom: 12px;
-            list-style: none;
-            opacity: 0.8;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 13px;
-            opacity: 0.7;
-        }
-
+        /* Responsividade */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; }
             .courses-grid { grid-template-columns: 1fr; }
-            .course-image { height: 200px; }
         }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        Inscrições abertas para o Processo Seletivo 2026! Invista na sua formação jurídica, tecnológica e teológica.
+        Inscrições abertas Vestibular 2026 UNIFACULDADE!
     </div>
 
     <header>
@@ -295,22 +246,21 @@
                 <li><a href="#">Início</a></li>
                 <li><a href="#cursos">Cursos</a></li>
                 <li><a href="#">Bolsas</a></li>
-                <li><a href="#">Unidades</a></li>
-                <li><a href="#" class="btn-vestibular">Inscreva-se Já</a></li>
+                <li><a href="#" class="btn-vestibular">Inscreva-se</a></li>
             </ul>
         </div>
     </header>
 
     <section class="hero">
-        <h1>Formação Acadêmica de Excelência</h1>
-        <p>Explore nossas graduações e cursos de extensão projetados para desenvolver senso crítico, base teórica sólida e alta preparação para o mercado.</p>
-        <a href="#cursos" class="btn-details" style="display:inline-block; padding: 15px 40px; font-size: 16px;">Ver todos os cursos</a>
+        <h1>Construa seu futuro acadêmico</h1>
+        <p>Explore nossas formações e escolha o caminho para o sucesso profissional.</p>
+        <a href="#cursos" class="btn-details" style="display:inline-block; padding: 15px 40px;">Ver todos</a>
     </section>
 
     <div class="container" id="cursos">
         <div class="section-header">
             <h2>Nossas Formações Disponíveis</h2>
-            <p>Encontre a qualificação ideal para o seu propósito profissional e acadêmico.</p>
+            <p>Conheça os cursos que oferecemos e comece sua jornada hoje.</p>
         </div>
 
         <div class="courses-grid">
@@ -318,114 +268,42 @@
             <div class="course-card">
                 <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1510173007675-9b21f3f4c6e2?q=80&w=600&auto=format&fit=crop');"></div>
                 <div class="course-content">
-                    <div>
-                        <span class="category-tag">Teologia & Extensão</span>
-                        <h3>Teologia Básica</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Introdução fundamental aos textos sagrados e doutrinas essenciais.</p>
+                    <span class="category-tag">Teologia & Extensão</span>
+                    <h3>Teologia Básica</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 1 Ano</span>
+                        <span><i class="fas fa-map-marker-alt"></i> EAD / Presencial</span>
+                        <span><i class="fas fa-moon"></i> Noturno</span>
                     </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 1 Ano</span>
-                            <span><i class="fas fa-map-marker-alt"></i> EAD / Presencial</span>
-                            <span><i class="fas fa-moon"></i> Noturno</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
                 </div>
             </div>
 
             <div class="course-card">
                 <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=600&auto=format&fit=crop');"></div>
                 <div class="course-content">
-                    <div>
-                        <span class="category-tag">Teologia & Ciências da Religião</span>
-                        <h3>Teologia Avançada</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Aprofundamento exegético, hermenêutica e história dogmática.</p>
+                    <span class="category-tag">Teologia & Ciências</span>
+                    <h3>Teologia Avançada</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 2 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> EAD / Presencial</span>
+                        <span><i class="fas fa-sun"></i> Matutino</span>
                     </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 2 Anos</span>
-                            <span><i class="fas fa-map-marker-alt"></i> EAD / Presencial</span>
-                            <span><i class="fas fa-sun"></i> Matutino</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card">
-                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="course-content">
-                    <div>
-                        <span class="category-tag">Graduação Ensino Superior</span>
-                        <h3>Bacharelado em Teologia</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Formação acadêmica completa reconhecida pelo MEC.</p>
-                    </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 4 Anos</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
-                            <span><i class="fas fa-university"></i> Integral</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
                 </div>
             </div>
 
             <div class="course-card">
                 <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop');"></div>
                 <div class="course-content">
-                    <div>
-                        <span class="category-tag">Tecnologia & Exatas</span>
-                        <h3>Análise e Desenvolvimento de Sistemas</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Foco em programação prática, frontend, backend e banco de dados.</p>
+                    <span class="category-tag">Tecnologia</span>
+                    <h3>Análise e Desenvolvimento</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 2.5 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
+                        <span><i class="fas fa-laptop-code"></i> Noturno</span>
                     </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 2.5 Anos</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
-                            <span><i class="fas fa-laptop-code"></i> Noturno</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card">
-                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="course-content">
-                    <div>
-                        <span class="category-tag">Humanas & Sociais</span>
-                        <h3>Direito</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Preparação sólida para advocacia, concursos e carreira jurídica.</p>
-                    </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 5 Anos</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Presencial</span>
-                            <span><i class="fas fa-gavel"></i> Matutino</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card">
-                <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="course-content">
-                    <div>
-                        <span class="category-tag">Negócios & Gestão</span>
-                        <h3>Administração</h3>
-                        <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Desenvolva visão estratégica corporativa e empreendedora.</p>
-                    </div>
-                    <div>
-                        <div class="course-info">
-                            <span><i class="far fa-clock"></i> 4 Anos</span>
-                            <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
-                            <span><i class="fas fa-chart-line"></i> Noturno</span>
-                        </div>
-                        <a href="#" class="btn-details">Mais detalhes</a>
-                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
                 </div>
             </div>
 
@@ -433,27 +311,8 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Sobre a UNIFACULDADE</h4>
-                <p>Nossa missão é promover educação de qualidade com foco no desenvolvimento intelectual, científico e humano dos nossos discentes.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Links Úteis</h4>
-                <li>Portal do Aluno</li>
-                <li>Biblioteca Central</li>
-                <li>Pesquisa Acadêmica & TCC</li>
-                <li>Edital de Matrícula</li>
-            </div>
-            <div class="footer-section">
-                <h4>Contato Institucional</h4>
-                <p><i class="fas fa-phone"></i> (91) 3333-0000</p>
-                <p><i class="fas fa-envelope"></i> contato@unifaculdade.edu.br</p>
-                <p><i class="fas fa-map-marker-alt"></i> Belém, Pará - Brasil</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2026 UNIFACULDADE - Todos os direitos reservados.
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p>&copy; 2026 UNIFACULDADE - Todos os direitos reservados.</p>
         </div>
     </footer>
 
