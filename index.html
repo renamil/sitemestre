@@ -144,4 +144,281 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
-            border: 1px solid #e2e8f
+            border: 1px solid #e2e8f0;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .course-image {
+            height: 200px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: var(--primary);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .category-tag {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .course-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .course-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .course-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-details {
+            display: block;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-details:hover {
+            background-color: #172554;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-section p, .footer-section li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+        }
+
+        /* Cores das imagens dos cursos (Placeholders) */
+        .bg-exatas { background-color: #e0f2fe; }
+        .bg-saude { background-color: #f0fdf4; }
+        .bg-humanas { background-color: #fff7ed; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        Inscrições abertas para o Vestibular 2026! Estude com quem é referência.
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-university"></i> UNIFACULDADE
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">Início</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#">Bolsas</a></li>
+                <li><a href="#">Unidades</a></li>
+                <li><a href="#" class="btn-vestibular">Inscreva-se</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Transforme seu futuro hoje</h1>
+        <p>Escolha entre mais de 20 cursos de graduação com infraestrutura de ponta e professores atuantes no mercado.</p>
+        <a href="#cursos" class="btn-details" style="display:inline-block; padding: 15px 40px;">Ver todos os cursos</a>
+    </section>
+
+    <div class="container" id="cursos">
+        <div class="section-header">
+            <h2>Nossas Graduações</h2>
+            <p>Encontre o curso que combina com a sua carreira.</p>
+        </div>
+
+        <div class="courses-grid">
+            
+            <div class="course-card">
+                <div class="course-image bg-exatas">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Tecnologia & Exatas</span>
+                    <h3>Análise e Desenvolvimento de Sistemas</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 2.5 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
+                        <span><i class="fas fa-sun"></i> Noturno</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image bg-saude">
+                    <i class="fas fa-briefcase-medical"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Saúde</span>
+                    <h3>Enfermagem</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 5 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial</span>
+                        <span><i class="fas fa-moon"></i> Matutino / Noturno</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image bg-humanas">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Humanas & Sociais</span>
+                    <h3>Direito</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 5 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial</span>
+                        <span><i class="fas fa-sun"></i> Noturno</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image bg-humanas">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Negócios</span>
+                    <h3>Administração</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 4 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial / EAD</span>
+                        <span><i class="fas fa-sun"></i> Noturno</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image bg-exatas">
+                    <i class="fas fa-drafting-compass"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Engenharia</span>
+                    <h3>Engenharia Civil</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 5 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial</span>
+                        <span><i class="fas fa-sun"></i> Integral</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image bg-saude">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <div class="course-content">
+                    <span class="category-tag">Saúde</span>
+                    <h3>Nutrição</h3>
+                    <div class="course-info">
+                        <span><i class="far fa-clock"></i> 4 Anos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Presencial</span>
+                        <span><i class="fas fa-sun"></i> Matutino</span>
+                    </div>
+                    <a href="#" class="btn-details">Mais detalhes</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre a UNIFACULDADE</h4>
+                <p>Nossa missão é promover educação de qualidade com foco na empregabilidade e inovação tecnológica para nossos alunos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <li>Portal do Aluno</li>
+                <li>Trabalhe Conosco</li>
+                <li>Biblioteca Virtual</li>
+                <li>Edital do Vestibular</li>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> (91) 3333-0000</p>
+                <p><i class="fas fa-envelope"></i> contato@unifaculdade.edu.br</p>
+                <p><i class="fas fa-map-marker-alt"></i> Belém, Pará - Brasil</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 UNIFACULDADE - Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
