@@ -14,6 +14,7 @@
             --text-muted: #64748b;
             --white: #ffffff;
             --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --success: #25d366;
         }
 
         * {
@@ -121,7 +122,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 60px 20px;
         }
 
         .section-header {
@@ -231,6 +232,141 @@
             background-color: #172554;
         }
 
+        .testimonials-bg {
+            background-color: #f1f5f9;
+            padding: 80px 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .student-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .student-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .student-info h4 {
+            font-size: 16px;
+            color: var(--primary);
+            font-weight: 700;
+            }
+
+        .student-info span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background: var(--white);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        summary {
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+            color: var(--secondary);
+        }
+
+        details p {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--success);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #20ba5a;
+        }
+
         footer {
             background-color: var(--primary);
             color: white;
@@ -263,6 +399,16 @@
             opacity: 0.8;
         }
 
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 30px;
@@ -277,10 +423,15 @@
             .hero p { font-size: 16px; }
             .courses-grid { grid-template-columns: 1fr; }
             .course-image { height: 200px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; }
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/5591985509286?text=Olá!+Gostaria+de+mais+informações+sobre+os+cursos." class="whatsapp-float" target="_blank" title="Fale Conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <div class="top-bar">
         Inscrições abertas para o Processo Seletivo 2026! Invista na sua formação jurídica, tecnológica e teológica.
@@ -294,8 +445,8 @@
             <ul class="nav-links">
                 <li><a href="#">Início</a></li>
                 <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#">Bolsas</a></li>
-                <li><a href="#">Unidades</a></li>
+                <li><a href="#depoimentos">Alunos</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
                 <li><a href="#" class="btn-vestibular">Inscreva-se Já</a></li>
             </ul>
         </div>
@@ -432,6 +583,66 @@
         </div>
     </div>
 
+    <section class="testimonials-bg" id="depoimentos">
+        <div class="section-header">
+            <h2>A Confiança de Quem Estuda Conosco</h2>
+            <p>Veja a experiência prática relatada por alunos e egressos da UNIFACULDADE.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"A grade curricular de Teologia superou minhas expectativas. A profundidade acadêmica nas matérias de exegese e a flexibilidade do EAD me permitiram conciliar os estudos perfeitamente."</p>
+                <div class="student-profile">
+                    <div class="student-avatar">RC</div>
+                    <div class="student-info">
+                        <h4>Rodrigo Cardoso</h4>
+                        <span>Aluno de Bacharelado em Teologia</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"O curso de ADS é focado exatamente no que o mercado pede. Os projetos práticos de programação me ajudaram a conseguir meu primeiro estágio na área logo no segundo semestre."</p>
+                <div class="student-profile">
+                    <div class="student-avatar">AS</div>
+                    <div class="student-info">
+                        <h4>Aline Serrão</h4>
+                        <span>Aluna de Análise e Des. de Sistemas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Os professores de Direito são extremamente qualificados e atuantes no mercado. A estrutura de simulação de tribunais faz toda a diferença para o nosso aprendizado prático."</p>
+                <div class="student-profile">
+                    <div class="student-avatar">FR</div>
+                    <div class="student-info">
+                        <h4>Fernando Rocha</h4>
+                        <span>Egresso do Curso de Direito</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="faq">
+        <div class="section-header">
+            <h2>Perguntas Frequentes</h2>
+            <p>Clique sobre as dúvidas para expandir as respostas e entender como funcionamos.</p>
+        </div>
+        <div class="faq-container">
+            <details>
+                <summary>Como funcionam as aulas no modelo híbrido/EAD?</summary>
+                <p>No modelo EAD e híbrido, você acessa os conteúdos teóricos por meio do nosso Portal do Aluno moderno, podendo assistir de onde quiser. Os encontros presenciais ou síncronos ocorrem para revisões, provas e atividades laboratoriais práticas.</p>
+            </details>
+            <details>
+                <summary>Os cursos de Teologia são reconhecidos pelo MEC?</summary>
+                <p>Sim! O nosso Bacharelado em Teologia é totalmente autorizado e reconhecido pelo MEC, emitindo diploma de ensino superior válido em todo o território nacional para fins acadêmicos e profissionais.</p>
+            </details>
+            <details>
+                <summary>Quais são as formas de ingresso e bolsas de estudo?</summary>
+                <p>Você pode ingressar através do nosso Vestibular Online, utilizando sua nota do ENEM ou via Transferência Externa. Oferecemos convênios institucionais, bolsas por desempenho acadêmico e facilidades de parcelamento direto.</p>
+            </details>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -447,8 +658,8 @@
             </div>
             <div class="footer-section">
                 <h4>Contato Institucional</h4>
-                <p><i class="fas fa-phone"></i> (91) 3333-0000</p>
-                <p><i class="fas fa-envelope"></i> contato@unifaculdade.edu.br</p>
+                <p><i class="fas fa-phone"></i> <a href="tel:9180462465">(91) 8046-2465</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:livraria-mana@live.com">livraria-mana@live.com</a></p>
                 <p><i class="fas fa-map-marker-alt"></i> Belém, Pará - Brasil</p>
             </div>
         </div>
