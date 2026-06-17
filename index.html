@@ -96,7 +96,6 @@
             border-radius: 5px;
         }
 
-        /* NOVA CAPA DO SITE (HERO PREMIUM) */
         .hero {
             background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(180, 83, 9, 0.5) 100%), 
                         url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1600&auto=format&fit=crop');
@@ -104,7 +103,7 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -182,6 +181,54 @@
             background-color: white;
             color: var(--primary);
             transform: translateY(-2px);
+        }
+
+        /* SEÇÃO NOVA: APRESENTAÇÃO */
+        .presentation-section {
+            background-color: #e2e8f0;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        .presentation-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .presentation-container h3 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .presentation-container p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .btn-presentation {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 14px 35px;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn-presentation:hover {
+            background-color: #172554;
+            transform: scale(1.03);
         }
 
         .container {
@@ -510,6 +557,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#">Início</a></li>
+                <li><a href="#apresentacao">Apresentação</a></li>
                 <li><a href="#cursos">Cursos</a></li>
                 <li><a href="#depoimentos">Alunos</a></li>
                 <li><a href="#faq">Dúvidas</a></li>
@@ -527,6 +575,17 @@
                 <a href="#cursos" class="btn-cta-primary">Ver Formações</a>
                 <a href="https://wa.me/559180462465?text=Olá!+Quero+me+inscrever+nos+cursos." target="_blank" class="btn-cta-secondary">Falar com Consultor</a>
             </div>
+        </div>
+    </section>
+
+    <section class="presentation-section" id="apresentacao">
+        <div class="presentation-container">
+            <i class="fas fa-chalkboard-teacher" style="font-size: 40px; color: var(--primary); margin-bottom: 15px;"></i>
+            <h3>Conheça nossa Proposta Institucional</h3>
+            <p>Preparamos um material completo em slides detalhando nossa missão, diferenciais, estrutura de cursos e a metodologia da IEABPEL CURSOS.</p>
+            <a href="https://gemini.google.com/share/182bf2d34b4e" target="_blank" class="btn-presentation">
+                <i class="fas fa-external-link-alt"></i> Abrir Apresentação Comercial
+            </a>
         </div>
     </section>
 
@@ -561,7 +620,7 @@
                 <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=600&auto=format&fit=crop');"></div>
                 <div class="course-content">
                     <div>
-                        <span class="category-tag">Teologia & Ciências da Religião</span>
+                        <span class="category-tag">Teologia & Sciences da Religião</span>
                         <h3>Teologia Avançada</h3>
                         <p style="font-size: 14px; color: #64748b; margin-bottom: 15px;">Aprofundamento exegético, hermenêutica e história dogmática.</p>
                     </div>
