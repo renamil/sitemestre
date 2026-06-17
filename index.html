@@ -40,7 +40,7 @@
             line-height: 1.6;
         }
 
-        /* Reutilizável: Containers de Seções */
+        /* Containers de Seções */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -121,7 +121,6 @@
             color: var(--primary);
         }
 
-        /* Botões Globais */
         .btn {
             display: inline-block;
             padding: 10px 20px;
@@ -185,7 +184,7 @@
         }
 
         /* ==========================================================================
-           4. COMPONENTE - APRESENTAÇÃO DE SLIDES (MANUAL)
+           4. COMPONENTE - APRESENTAÇÃO DE SLIDES
            ========================================================================== */
         .presentation-wrapper {
             background-color: #f1f5f9;
@@ -217,12 +216,19 @@
             background-repeat: no-repeat;
         }
 
+        /* Ajustes visuais para os slides escuros com imagem aparente */
         .slide-card h3 {
             font-size: 28px;
-            color: var(--primary);
+            color: white;
             margin-bottom: 15px;
             border-left: 5px solid var(--secondary);
             padding-left: 15px;
+        }
+
+        .slide-card p {
+            color: #f1f5f9;
+            font-size: 17px;
+            max-width: 800px;
         }
 
         .slide-grid-info {
@@ -237,18 +243,18 @@
             align-items: center;
             gap: 10px;
             font-weight: 600;
-            color: var(--primary);
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(4px);
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
             padding: 12px;
             border-radius: 8px;
-            border: 1px solid rgba(30, 58, 138, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .slide-counter {
             text-align: right;
             font-size: 12px;
-            color: var(--text-muted);
+            color: #cbd5e1;
             font-weight: 700;
         }
 
@@ -433,7 +439,7 @@
         }
 
         /* ==========================================================================
-           8. RESPONSIVIDADE (MEDIA QUERIES)
+           8. RESPONSIVIDADE
            ========================================================================== */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -486,7 +492,7 @@
             </div>
             
             <div class="slide-carousel">
-                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1513258496099-48168024addd?q=80&w=1000&auto=format&fit=crop');">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1513258496099-48168024addd?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Quem Somos</h3>
                         <p>A IEABPEL CURSOS é uma instituição comprometida com o desenvolvimento intelectual e humano de seus alunos, unindo rigor acadêmico a princípios éticos consolidados.</p>
@@ -498,38 +504,38 @@
                     <div class="slide-counter">SLIDE 01 / 04</div>
                 </article>
 
-                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop');">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Metodologia Prática</h3>
                         <p>Nosso ecossistema de aprendizagem utiliza ambientes virtuais modernos (EAD) alinhados a mentorias síncronas e suporte contínuo para sua evolução.</p>
                         <div class="slide-grid-info">
-                            <div class="info-pill"><i class="fas fa-desktop"></i> Portal do Aluno 24 horas disponível</div>
-                            <div class="info-pill"><i class="fas fa-user-shield"></i> Acompanhamento acadêmico humanizado</div>
+                            <div class="info-pill"><i class="fas fa-desktop"></i> Portal 24h</div>
+                            <div class="info-pill"><i class="fas fa-user-shield"></i> Acompanhamento acadêmico</div>
                         </div>
                     </div>
                     <div class="slide-counter">SLIDE 02 / 04</div>
                 </article>
 
-                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop');">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Nossa Infraestrutura</h3>
                         <p>Contamos com polos estrategicamente estruturados para atender demandas acadêmicas, suporte logístico e aplicação de avaliações obrigatórias.</p>
                         <div class="slide-grid-info">
-                            <div class="info-pill"><i class="fas fa-map-marker-alt"></i> Sede em Belém - Pará</div>
-                            <div class="info-pill"><i class="fas fa-globe"></i> Alcance nacional via plataforma online</div>
+                            <div class="info-pill"><i class="fas fa-map-marker-alt"></i> Sede em Belém - PA</div>
+                            <div class="info-pill"><i class="fas fa-globe"></i> Alcance nacional</div>
                         </div>
                     </div>
                     <div class="slide-counter">SLIDE 03 / 04</div>
                 </article>
 
-                <article class="slide-card" style="background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.96), rgba(180, 83, 9, 0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop'); color: white;">
+                <article class="slide-card" style="background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(180, 83, 9, 0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop');">
                     <div>
-                        <h3 style="color: white; border-color: var(--secondary);">Construa Seu Futuro Conosco</h3>
-                        <p style="color: #cbd5e1;">Chegou a hora de dar o próximo passo na sua carreira profissional e vocação ministerial. Acesse nossa secretaria digital agora mesmo.</p>
+                        <h3 style="border-color: var(--secondary);">Construa Seu Futuro Conosco</h3>
+                        <p>Chegou a hora de dar o próximo passo na sua carreira profissional e vocação ministerial. Acesse nossa secretaria digital agora mesmo.</p>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
                         <a href="https://wa.me/5591985509286" target="_blank" class="btn btn-primary">Falar com Consultor no WhatsApp</a>
-                        <div class="slide-counter" style="color: white; opacity: 0.8;">FIM DA APRESENTAÇÃO</div>
+                        <div class="slide-counter">FIM DA APRESENTAÇÃO</div>
                     </div>
                 </article>
             </div>
@@ -543,6 +549,7 @@
         </div>
 
         <div class="grid-courses">
+            
             <div class="course-item">
                 <div class="course-thumb" style="background-image: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop');"></div>
                 <div class="course-details">
@@ -573,11 +580,48 @@
                     <div>
                         <span class="course-tag">Ciências Jurídicas</span>
                         <h3>Direito</h3>
-                        <p style="font-size: 14px; color: var(--text-muted);">Sólida base jurídica voltada para carreiras públicas, advocacia e consultoria corporativa.</p>
+                        <p style="font-size: 14px; color: var(--text-muted);">Sólida base jurídica voltada para carreiras públicas, advocacia e corporativa.</p>
                     </div>
                     <a href="#" class="btn-block">Ver Detalhes</a>
                 </div>
             </div>
+
+            <div class="course-item">
+                <div class="course-thumb" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop');"></div>
+                <div class="course-details">
+                    <div>
+                        <span class="course-tag">Educação</span>
+                        <h3>Pedagogia</h3>
+                        <p style="font-size: 14px; color: var(--text-muted);">Preparação completa para atuação na docência, gestão escolar e educação inclusiva.</p>
+                    </div>
+                    <a href="#" class="btn-block">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-item">
+                <div class="course-thumb" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop');"></div>
+                <div class="course-details">
+                    <div>
+                        <span class="course-tag">Negócios</span>
+                        <h3>Administração</h3>
+                        <p style="font-size: 14px; color: var(--text-muted);">Visão estratégica, gestão de pessoas e finanças para liderar grandes organizações.</p>
+                    </div>
+                    <a href="#" class="btn-block">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <div class="course-item">
+                <div class="course-thumb" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=600&auto=format&fit=crop');"></div>
+                <div class="course-details">
+                    <div>
+                        <span class="course-tag">Saúde Mental</span>
+                        <h3>Psicologia</h3>
+                        <p style="font-size: 14px; color: var(--text-muted);">Estudo do comportamento humano voltado para a área clínica e organizacional.</p>
+                    </div>
+                    <a href="#" class="btn-block">Ver Detalhes</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
