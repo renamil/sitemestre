@@ -203,7 +203,6 @@
 
         .slide-card {
             min-width: 100%;
-            background: var(--bg-card);
             border-radius: var(--radius);
             padding: 50px;
             scroll-snap-align: start;
@@ -212,7 +211,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 400px;
+            min-height: 430px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .slide-card h3 {
@@ -236,9 +238,11 @@
             gap: 10px;
             font-weight: 600;
             color: var(--primary);
-            background: #f1f5f9;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
             padding: 12px;
             border-radius: 8px;
+            border: 1px solid rgba(30, 58, 138, 0.1);
         }
 
         .slide-counter {
@@ -432,7 +436,7 @@
            8. RESPONSIVIDADE (MEDIA QUERIES)
            ========================================================================== */
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* Oculta menu em telas pequenas */
+            .nav-links { display: none; }
             .hero-body h1 { font-size: 36px; }
             .slide-card { padding: 30px; min-height: auto; }
             .slide-grid-info { grid-template-columns: 1fr; }
@@ -441,7 +445,7 @@
 </head>
 <body>
 
-    <a href="https://wa.me/559180462465?text=Olá!+Gostaria+de+mais+informações+sobre+os+cursos." class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/5591985509286?text=Olá!+Gostaria+de+mais+informações+sobre+os+cursos." class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -460,7 +464,7 @@
                 <li><a href="#cursos">Cursos</a></li>
                 <li><a href="#depoimentos">Depoimentos</a></li>
                 <li><a href="#faq">Dúvidas</a></li>
-                <li><a href="https://wa.me/559180462465" target="_blank" class="btn btn-primary">Inscreva-se</a></li>
+                <li><a href="https://wa.me/5591985509286" target="_blank" class="btn btn-primary">Inscreva-se</a></li>
             </ul>
         </nav>
     </header>
@@ -482,7 +486,7 @@
             </div>
             
             <div class="slide-carousel">
-                <article class="slide-card">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1513258496099-48168024addd?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Quem Somos</h3>
                         <p>A IEABPEL CURSOS é uma instituição comprometida com o desenvolvimento intelectual e humano de seus alunos, unindo rigor acadêmico a princípios éticos consolidados.</p>
@@ -494,7 +498,7 @@
                     <div class="slide-counter">SLIDE 01 / 04</div>
                 </article>
 
-                <article class="slide-card">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Metodologia Prática</h3>
                         <p>Nosso ecossistema de aprendizagem utiliza ambientes virtuais modernos (EAD) alinhados a mentorias síncronas e suporte contínuo para sua evolução.</p>
@@ -506,7 +510,7 @@
                     <div class="slide-counter">SLIDE 02 / 04</div>
                 </article>
 
-                <article class="slide-card">
+                <article class="slide-card" style="background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop');">
                     <div>
                         <h3>Nossa Infraestrutura</h3>
                         <p>Contamos com polos estrategicamente estruturados para atender demandas acadêmicas, suporte logístico e aplicação de avaliações obrigatórias.</p>
@@ -518,14 +522,14 @@
                     <div class="slide-counter">SLIDE 03 / 04</div>
                 </article>
 
-                <article class="slide-card" style="background: var(--primary); color: white;">
+                <article class="slide-card" style="background-image: linear-gradient(135deg, rgba(30, 58, 138, 0.96), rgba(180, 83, 9, 0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop'); color: white;">
                     <div>
                         <h3 style="color: white; border-color: var(--secondary);">Construa Seu Futuro Conosco</h3>
                         <p style="color: #cbd5e1;">Chegou a hora de dar o próximo passo na sua carreira profissional e vocação ministerial. Acesse nossa secretaria digital agora mesmo.</p>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-                        <a href="https://wa.me/559180462465" target="_blank" class="btn btn-primary">Falar com Consultor no WhatsApp</a>
-                        <div class="slide-counter" style="color: white;">FIM DA APRESENTAÇÃO</div>
+                        <a href="https://wa.me/5591985509286" target="_blank" class="btn btn-primary">Falar com Consultor no WhatsApp</a>
+                        <div class="slide-counter" style="color: white; opacity: 0.8;">FIM DA APRESENTAÇÃO</div>
                     </div>
                 </article>
             </div>
@@ -648,7 +652,7 @@
             <div>
                 <h4>Suporte Acadêmico</h4>
                 <p style="font-size: 14px; margin-top: 10px;">
-                    <i class="fas fa-phone"></i> <a href="tel:9180462465">(91) 8046-2465</a><br>
+                    <i class="fas fa-phone"></i> <a href="tel:91985509286">(91) 98550-9286</a><br>
                     <i class="fas fa-envelope"></i> <a href="mailto:livraria-mana@live.com">livraria-mana@live.com</a><br>
                     <i class="fas fa-map-marker-alt"></i> Belém, Pará - Brasil
                 </p>
